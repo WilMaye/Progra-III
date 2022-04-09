@@ -47,7 +47,7 @@ void ingresardatos(){
     cout << endl;
     
     for(int i=0; i<n; i++){
-        cout << " Numero del nodo " << i+1 << ": ";
+        cout << " Palabra del nodo " << i+1 << ": ";
         cin >> pl;
         insertar(arbol, pl);
     }	
@@ -76,22 +76,22 @@ void lectura(){
 
 void play(string pl1){
     
-    string archivo = pl1+".wav";
+    string archivo = pl1+ ".wav";
     cout<<PlaySound((LPCSTR)archivo.c_str(),NULL,SND_FILENAME | SND_ASYNC);
-    system("pause");
+    
 }
 
 bool buscar(Arbol &arbol,string pl){
 	if(arbol != NULL){
 		if(strcasecmp( pl.c_str(), arbol->pl.c_str() ) == 0){
+			cout << "Si existe la palabra, reproduciendo audio"<< endl;
 			play(pl);
-			return true;
 		}else if( strcasecmp( pl.c_str(), arbol->pl.c_str() ) > 0 ){
 			return buscar(arbol->der,pl);
 		}else if(strcasecmp(pl.c_str(), arbol->pl.c_str() ) < 0){
 			return buscar(arbol->izq,pl);
 		}else{
-			return false;
+			cout << "No se encontro la palabra"<< endl;
 		}
 	}
 }
@@ -102,7 +102,6 @@ void searchdatos(){
     cin >> pl1;
     buscar(arbol, pl1);
 }
-
 
 int main(){
 
