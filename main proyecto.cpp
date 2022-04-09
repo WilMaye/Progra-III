@@ -107,26 +107,26 @@ int main(){
 
 	lectura();
 	// creado Arbol
-int opt;
-do{
-	system("cls");
-	cout << "ARBOL BINARIO DE BUSQUEDA"<<endl;
-	cout <<"1 Ingresar Datos al Arbol"<<endl;
-	cout <<"2 Buscar palabra"<<endl;
-	cout <<"Ingrese una Opcion"<<endl;
-	cin>>opt;
-	
-	switch(opt){
-		case 1: system("cls");ingresardatos();break;
-		case 2: system("cls");searchdatos(); cout<<"."<<endl;system("pause"); break;
-		default: cout<<"opcion no valida"<<endl;
-	}
+	int opt;
+	do{
+		system("cls");
+		cout << "ARBOL BINARIO DE BUSQUEDA"<<endl;
+		cout <<"1 Ingresar Datos al Arbol"<<endl;
+		cout <<"2 Buscar palabra"<<endl;
+		cout <<"Ingrese una Opcion"<<endl;
+		cin>>opt;
+		
+		switch(opt){
+			case 1: system("cls");ingresardatos();break;
+			case 2: system("cls");searchdatos(); cout<<"."<<endl;system("pause"); break;
+			default: cout<<"opcion no valida"<<endl;
+		}
 
-}while (opt!=2);
+	}while (opt!=2);
 
-    cout << endl << endl;
+		cout << endl << endl;
 
-    system("pause");
-    return 0;
+		system("pause");
+	return 0;
 }
 
